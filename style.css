@@ -1,11 +1,18 @@
-.main {
+* {
+  box-sizing: border-box;
+}
+
+main {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  background-color: lightgray;
 }
 
 div {
   height: 50px;
-  width: 90%;
-  margin: 5px;
+  width: 100%;
 }
 
 .div1 {
@@ -19,3 +26,25 @@ div {
 .div3 {
   background-color: lightblue;
 }
+
+@media screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    background-color: lightgray;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+    .div1 {
+        background-color: orange;
+        width: 50%;
+      }
+      
+      .div2 { 
+        background-color: purple;
+        width: 50%;
+      }
+      
+      .div3 {
+        background-color: red;
+      }
+  }
