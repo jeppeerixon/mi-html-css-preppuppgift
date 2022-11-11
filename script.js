@@ -59,16 +59,20 @@ function updateDonutSum(x) {
 
 }
 
+// funktion för att uppdatera totala summan
 function updateTotalSum() {
+    //hittar alla munkars summor
     const allSums = document.querySelectorAll('.sum');
-
+    //hittar totala priset för alla munkar
     let totalSum = document.querySelector('.totalsum');
     
-    numTotalSum = 0;
+    //tom variable för att räkna
+    let numTotalSum = 0;
 
+    //loopar igenom alla munkars summa och lägger ihop till total summa
     for (i = 0; i < allSums.length; i++) {
         numTotalSum = numTotalSum + Number(allSums[i].innerHTML)
     }
-
+    //slänger in det i htmln
     totalSum.innerHTML = numTotalSum;
 }
