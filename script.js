@@ -24,7 +24,7 @@ function plusButtonPress(x) {
 
     findCurrentDonutAmount.innerHTML = Number(currentDonutAmount) + 1;
 
-    updatePrice(x);
+    updateDonutSum(x);
 }
 
 //funktion för minusknappen - 1
@@ -38,11 +38,11 @@ function minusButtonPress(x) {
     }
     findCurrentDonutAmount.innerHTML = Number(currentDonutAmount) - 1;
 
-    updatePrice(x);
+    updateDonutSum(x);
 }
 
 //funktion för att uppdatera totala summan
-function updatePrice(x) {
+function updateDonutSum(x) {
     //hittar antalet
     const findCurrentDonutAmount = x.currentTarget.parentElement.querySelector('.amount');
     let currentDonutAmount = Number(findCurrentDonutAmount.innerHTML);
@@ -54,4 +54,21 @@ function updatePrice(x) {
     let currentDonutSum = Number(findCurrentDonutSum.innerHTML);
     //tar antal * priset för totala summan
     findCurrentDonutSum.innerHTML = currentDonutAmount * currentDonutPrice;
+
+    updateTotalSum();
+
+}
+
+function updateTotalSum() {
+    const allSums = document.querySelectorAll('.sum');
+
+    let totalSum = document.querySelector('.totalsum');
+    
+    numTotalSum = 0;
+
+    for (i = 0; i < allSums.length; i++) {
+        numTotalSum = numTotalSum + Number(allSums[i].innerHTML)
+    }
+
+    totalSum.innerHTML = numTotalSum;
 }
